@@ -21,14 +21,6 @@ First of all, we recommend the following context:
 The following example illustrates how to realize this on Debian-based
 distributions using `virtualenv <https://virtualenv.pypa.io/en/stable/>`_:
 
-.. code-block:: console
-
-   # apt-get install virtualenv python3-pip
-   # useradd modoboa  # create a dedicated user
-   # su -l modoboa    # log in as the newly created user
-   $ virtualenv --python python3 ./env  # create the virtual environment
-   $ source ./env/bin/activate          # activate the virtual environment
-
 Modoboa depends on external tools and some of them require compilation
 so you need a compiler and a few C libraries. Make sure to install the
 following system packages according to your distribution:
@@ -63,6 +55,17 @@ following system packages according to your distribution:
     +---------------------------------------+
     | python3-wheel python3-rrdtool rrdtool |
     +---------------------------------------+
+
+
+.. code-block:: console
+
+   # apt-get install virtualenv python3-pip
+   # useradd modoboa -m -s /bin/bash  # create a dedicated user
+   # su -l modoboa    # log in as the newly created user
+   $ virtualenv --python python3 ./env  # create the virtual environment
+   $ source ./env/bin/activate          # activate the virtual environment
+
+
 
 Then, install Modoboa by running:
 
